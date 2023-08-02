@@ -1,0 +1,25 @@
+<!-- src/app/question/question.component.html -->
+<div>
+<div class="card mt-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ question.question }}</h5>
+      <div *ngIf="question.type === 'dropdown'">
+        <select class="form-select" [(ngModel)]="parentAnswer">
+          <option *ngFor="let option of question.options" [value]="option">{{ option }}</option>
+        </select>
+      </div>
+      <div *ngIf="question.type === 'textinput'">
+        <input type="text" class="form-control" [(ngModel)]="question.answer"/>
+      </div>
+      <div *ngIf="a.subQue">
+        <button class="btn btn-primary mt-2" (click)="toggleSubQuestion()">
+          {{ isSubQuestionVisible ? 'Hide Sub-Question' : 'Show Sub-Question' }}
+        </button>
+        <div *ngIf="isSubQuestionVisible">
+          <app-question *ngFor="let subQuestion of question.subQue" [question]="subQuestion" [parentAnswer]="parentAnswer"></app-question>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+  

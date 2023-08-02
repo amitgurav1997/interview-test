@@ -1,0 +1,13 @@
+.home {
+    position: relative;
+    top: 167px;
+}
+
+h3, h4 {
+    margin-bottom: 5px;
+  }
+  
+  .main-question, .sub-question {
+    margin: 10px 0;
+  }
+  
